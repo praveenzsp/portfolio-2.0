@@ -32,7 +32,7 @@ function Projects() {
             variants={wave}
             initial='initial'
             whileInView='animate'
-            viewport={{once:true,amount:0.8}}        
+            viewport={{once:true}}        
         >
 
             <motion.div variants={item} id='project-card' className='w-full md:w-2/4 lg:w-1/4 h-auto rounded-[20px] flex flex-col bg-gradient-to-br from-[#313131] to-[#000000] border-[1px] border-[#535353]'>
