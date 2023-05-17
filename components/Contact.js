@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import * as EmailValidator from 'email-validator';
 
 
 function Contact() {
@@ -14,33 +15,71 @@ function Contact() {
   const [gmail,setGmail]=useState('')
   const [comments,setComments]=useState('')
 
-  const handleSubmit=(e)=>{
-    // console.log('form submitted',name,gmail,comments)
-    // console.log(e.target)
-    e.preventDefault();
-    toast.success('Message sent successfully',{
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      })
 
-    emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, e.target, process.env.NEXT_PUBLIC_PUBLIC_KEY)
-      .then((result) => {
-          console.log(result.text);
-          setName('')
-          setGmail('')
-          setComments('')
-      }, (error) => {
-          toast.error('Something went wrong')
-          console.log(error.text);
-      });
+  
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    if(EmailValidator.validate(gmail)){
+      toast.success('Message sent successfully',{
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        })
+  
+      emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, e.target, process.env.NEXT_PUBLIC_PUBLIC_KEY)
+        .then((result) => {
+            console.log(result.text);
+            setName('')
+            setGmail('')
+            setComments('')
+        }, (error) => {
+            toast.error('Something went wrong')
+            console.log(error.text);
+        });
+    }
+    else{
+      toast.error('Invalid Gmail address',{
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        })
+    }
+    // toast.success('Message sent successfully',{
+    //   position: "top-right",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "light",
+    //   })
+
+    // emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, e.target, process.env.NEXT_PUBLIC_PUBLIC_KEY)
+    //   .then((result) => {
+    //       console.log(result.text);
+    //       setName('')
+    //       setGmail('')
+    //       setComments('')
+    //   }, (error) => {
+    //       toast.error('Something went wrong')
+    //       console.log(error.text);
+    //   });
       
   }
+
+  
 
   return (
     <>
