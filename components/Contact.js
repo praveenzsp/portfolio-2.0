@@ -38,9 +38,9 @@ function Contact() {
         <div className='flex justify-center items-center flex-col-reverse lg:flex-row'>
           <form id='form' className='bg-gradient-to-br from-[#313131] to-[#000000] border-[1px] border-[#535353] lg:w-[450px] w-[300px] flex flex-col justify-center items-center lg:gap-6 gap-3 rounded-[20px] lg:p-6 lg:ml-20 p-3' onSubmit={handleSubmit}>
               <h1 className='text-3xl text-center text-semibold'>Reach out to me</h1>
-              <Input  bordered label="Name" placeholder='Enter your name' color='success' className='lg:w-[400px] w-[250px]' value={name} onChange={e=>setName(e.target.value)} name='name'/>
-              <Input  bordered label="Gmail" placeholder='Enter your gmail' color='success' className='lg:w-[400px] w-[250px]' value={gmail} onChange={e=>setGmail(e.target.value)} name='gmail'/>
-              <Textarea label="Leave a comment" status="default" color='success'  bordered className='lg:w-[400px] w-[250px] mb-4' placeholder='Write something'  value={comments} onChange={e=>setComments(e.target.value)} name='comments'/>
+              <Input  bordered label="Name" placeholder='Enter your name' color='success' className='lg:w-[400px] w-[250px]' value={name} onChange={e=>setName(e.target.value)} name='name' required/>
+              <Input  bordered label="Gmail" placeholder='Enter your gmail' color='success' className='lg:w-[400px] w-[250px]' value={gmail} onChange={e=>setGmail(e.target.value)} name='gmail' required/>
+              <Textarea label="Leave a comment" status="default" color='success'  bordered className='lg:w-[400px] w-[250px] mb-4' placeholder='Write something'  value={comments} onChange={e=>setComments(e.target.value)} name='comments' required/>
               <Input type='submit' className='border-[1px] border-primary text-primary rounded-[20px] lg:px-4 lg:py-2 px-3 y-2 hover:border-[2px]' value='Submit'/>
           </form>
           <motion.div 
