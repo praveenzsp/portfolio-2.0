@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Contact() {
@@ -16,6 +18,16 @@ function Contact() {
     // console.log('form submitted',name,gmail,comments)
     // console.log(e.target)
     e.preventDefault();
+    toast.success('Message sent successfully',{
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      })
 
     emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, e.target, process.env.NEXT_PUBLIC_PUBLIC_KEY)
       .then((result) => {
@@ -24,12 +36,14 @@ function Contact() {
           setGmail('')
           setComments('')
       }, (error) => {
+          toast.error('Something went wrong')
           console.log(error.text);
       });
       
   }
 
   return (
+    <>
     <div className='relative' id='contact'>
         <h1 className='text-[30px] lg:text-[40px] font-extrabold text-center tracking-wide lg:my-16 my-6'>
                 Contact <span className='text-primary'>Me</span> 
@@ -63,6 +77,7 @@ function Contact() {
           </div>
         </div>
     </div>
+    </>
   )
 }
 
