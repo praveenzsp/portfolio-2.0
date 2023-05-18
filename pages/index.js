@@ -16,8 +16,9 @@ export default function Home() {
   const constraintRef = useRef(null);
   return (
     <div ref={constraintRef}>
-        <Tooltip content='drag n play with astro' color='default' trigger="click" placement="right">
-            <motion.div className="z-10 relative w-24 h-24 lg:w-32 lg:h-32">
+      <NavbarComponent />
+      <Tooltip content='drag n play with astro' color='default' trigger="click" placement="right">
+            <motion.div className="z-10 relative w-24 h-24 lg:w-32 lg:h-32 ml-auto mr-auto">
                   <motion.img
                     src="/astro.png"
                     width={150}
@@ -30,8 +31,7 @@ export default function Home() {
                     dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
                   />
             </motion.div>
-        </Tooltip>
-      <NavbarComponent />
+          </Tooltip>
       <Hero />
       <Skills />
       <Projects />
