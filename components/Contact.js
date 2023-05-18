@@ -54,29 +54,7 @@ function Contact() {
         progress: undefined,
         theme: "light",
         })
-    }
-    // toast.success('Message sent successfully',{
-    //   position: "top-right",
-    //   autoClose: 5000,
-    //   hideProgressBar: false,
-    //   closeOnClick: true,
-    //   pauseOnHover: true,
-    //   draggable: true,
-    //   progress: undefined,
-    //   theme: "light",
-    //   })
-
-    // emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, e.target, process.env.NEXT_PUBLIC_PUBLIC_KEY)
-    //   .then((result) => {
-    //       console.log(result.text);
-    //       setName('')
-    //       setGmail('')
-    //       setComments('')
-    //   }, (error) => {
-    //       toast.error('Something went wrong')
-    //       console.log(error.text);
-    //   });
-      
+    }     
   }
 
   
