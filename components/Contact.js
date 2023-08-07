@@ -88,7 +88,7 @@ function Contact() {
           <p className='tracking-wide lg:text-[20px] text-[12px]'>Feel free to reach out to me for Freelancing</p>
           <div className='flex justify-center lg:gap-20 gap-10 my-10 lg:pb-10'>
             <Image src='/instagram.png' width={50} height={50} className='lg:w-[50px] lg:h-[50px] w-[30px] h-[30px] cursor-pointer' onClick={e=>router.push('https://www.instagram.com/praveen__zsp/')} alt=''/>
-            <Image src='/twitter.png' width={50} height={50} className='lg:w-[50px] lg:h-[50px] w-[30px] h-[30px] cursor-pointer' onClick={e=>router.push('https://twitter.com/Praveen_Zsp')} alt=''/>
+            <Image src='/twitter.png' width={50} height={50} className='lg:w-[50px] lg:h-[50px] w-[30px] h-[30px] cursor-pointer' onClick={e=>router.push('https://twitter.com/praveen__z')} alt=''/>
             <Image src='/github.png' width={50} height={50} className='lg:w-[50px] lg:h-[50px] w-[30px] h-[30px] cursor-pointer' onClick={e=>router.push('https://github.com/praveenzsp')} alt=''/>
             <Image src='/linkedin.png' width={50} height={50} className='lg:w-[50px] lg:h-[50px] w-[30px] h-[30px] cursor-pointer ' onClick={e=>router.push('https://www.linkedin.com/in/znanam-sai-praveen-4127441b3/')} alt=''/>
           </div>
