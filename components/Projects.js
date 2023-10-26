@@ -35,7 +35,7 @@ function Projects() {
             viewport={{once:true}}        
         >
 
-            <motion.div variants={item} id='project-card' className='w-full md:w-2/4 lg:w-1/4 h-auto rounded-[20px] flex flex-col bg-gradient-to-br from-[#313131] to-[#000000] border-[1px] border-[#535353]'>
+            <motion.div variants={item} id='project-card' className='w-full md:w-2/4 lg:w-1/4 h-auto rounded-[20px] flex flex-col bg-gradient-to-br from-[#313131] to-[#000000] border-[1px] border-[#535353] z-20'>
                 <div className='px-5 py-5'>
                     <Image src='/fitme.png' width={500} height={300} className='rounded-[20px]' alt=''/>
                 </div>
@@ -52,7 +52,7 @@ function Projects() {
             </motion.div>
 
 
-            <motion.div variants={item} id='project-card' className='w-full md:w-2/4 lg:w-1/4 h-auto rounded-[20px] flex flex-col bg-gradient-to-br from-[#313131] to-[#000000] border-[1px] border-[#535353]'>
+            <motion.div variants={item} id='project-card' className='w-full md:w-2/4 lg:w-1/4 h-auto rounded-[20px] flex flex-col bg-gradient-to-br from-[#313131] to-[#000000] border-[1px] border-[#535353] z-50'>
                 <div className='px-5 py-5'>
                     <Image src='/kryptocloud.png' width={500} height={300} className='rounded-[20px]' alt=''/>
                 </div>
@@ -69,7 +69,7 @@ function Projects() {
             </motion.div>
 
 
-            <motion.div variants={item} id='project-card' className='w-full md:w-2/4 lg:w-1/4 h-auto rounded-[20px] flex flex-col bg-gradient-to-br from-[#313131] to-[#000000] border-[1px] border-[#535353]'>
+            <motion.div variants={item} id='project-card' className='w-full md:w-2/4 lg:w-1/4 h-auto rounded-[20px] flex flex-col bg-gradient-to-br from-[#313131] to-[#000000] border-[1px] border-[#535353] z-20'>
                 <div className='px-5 py-5'>
                     <Image src='/dsa-tracker.png' width={500} height={300} className='rounded-[20px]' alt=''/>
                 </div>
