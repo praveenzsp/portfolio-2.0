@@ -10,18 +10,12 @@ import Skills from "@/components/Skills";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { Tooltip } from "@nextui-org/react";
-import Spidey from "@/components/Spidey";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const constraintRef = useRef(null);
   return (
     <div ref={constraintRef}>
-
-      <Spidey/>
-
-
-
       <NavbarComponent />
       <Tooltip content='drag & release astro' color='default' trigger="click" placement="right">
             <motion.div className="z-10 relative w-24 h-24 lg:w-32 lg:h-32 ml-auto mr-auto">
@@ -38,7 +32,6 @@ export default function Home() {
                   />
             </motion.div>
           </Tooltip>
-
       <Hero />
       <Skills />
       <Projects />
